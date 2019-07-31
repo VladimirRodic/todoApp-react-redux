@@ -3,7 +3,6 @@ export default (state = {}, action) => {
     case "ADD_TODO":
       return [...state, { id: action.id, text: action.text, completed: false }];
     case "TOGGLE_TODO":
-      console.log("state", state);
       // more readable option where we use special function for each individual todo
       // return state.map(t => todo(t, action));
       return state.map(el =>
