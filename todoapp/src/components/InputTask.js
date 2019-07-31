@@ -17,7 +17,7 @@ class InputTask extends React.Component {
           value={this.state.inputValue}
           onChange={evt => this.updateInputValue(evt)}
         />
-        <button onClick={() => this.props.addTodo(this.state.inputValue)}>
+        <button onClick={() => this.handleOnClick(this.state.inputValue)}>
           Add
         </button>
       </div>
@@ -26,6 +26,12 @@ class InputTask extends React.Component {
   updateInputValue(evt) {
     this.setState({
       inputValue: evt.target.value
+    });
+  }
+  handleOnClick(inputValueArg) {
+    this.props.addTodo(inputValueArg);
+    this.setState({
+      inputValue: ""
     });
   }
 }

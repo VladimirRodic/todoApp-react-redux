@@ -7,7 +7,7 @@ class TaskList extends React.Component {
       <div>
         <ul>
           {this.props.todos.map(todo => (
-            <li>{todo.text}</li>
+            <li key={todo.id}>{todo.text}</li>
           ))}
         </ul>
       </div>

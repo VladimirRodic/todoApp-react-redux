@@ -1,6 +1,9 @@
+let todoId = 0;
+
 export const addTodo = todoText => {
   return {
     type: "ADD_TODO",
+    id: todoId++,
     text: todoText
   };
 };
