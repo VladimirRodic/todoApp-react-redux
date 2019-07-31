@@ -1,16 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 
-function TaskList() {
-  return (
-    <div>
-      <ul>
-        <li>first</li>
-        <li>second</li>
-        <li>third</li>
-      </ul>
-    </div>
-  );
+class TaskList extends React.Component {
+  render() {
+    return (
+      <div>
+        <ul>
+          {this.props.todos.map(todo => (
+            <li>{todo.text}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = (state, ownProps) => {

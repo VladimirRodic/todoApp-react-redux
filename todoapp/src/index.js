@@ -6,14 +6,17 @@ import thunk from "redux-thunk";
 
 import App from "./components/App";
 import reducers from "./store/reducers";
+import initialState from "./store/initialState";
 
 import * as serviceWorker from "./serviceWorker";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-console.log("reducers in index.js", reducers);
-
-const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(
+  reducers,
+  initialState,
+  composeEnhancers(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
   <Provider store={store}>
