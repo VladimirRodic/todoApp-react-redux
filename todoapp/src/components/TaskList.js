@@ -24,13 +24,27 @@ class TaskList extends React.Component {
   }
 }
 
+function getVisibleTodos(todos, visibility) {
+  console.log("visibility", visibility);
+  switch (visibility) {
+    case "SHOW_ALL":
+      return todos;
+    case "TO_DO":
+      return todos.filter(todo => todo.completed === false);
+    case "COMPLETED":
+      return todos.filter(todo => todo.completed === true);
+    default:
+      return todos;
+  }
+}
+
 const mapDispatchToProps = {
   toggleTodo
 };
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    todos: state.todos
+    todos: getVisibleTodos(state.todos, state.visibility)
   };
 };
 

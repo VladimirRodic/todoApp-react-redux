@@ -17,7 +17,9 @@ export const toggleTodo = idTodo => {
 };
 
 // changes which actions are shown
-export const setVisibility = () => dispatch =>
-  dispatch({
-    type: "SET_VISIBILITY"
-  });
+export const setVisibility = visibilityOption => {
+  return {
+    type: "SET_VISIBILITY",
+    visibilityOption
+  };
+};
