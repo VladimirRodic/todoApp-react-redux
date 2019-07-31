@@ -9,10 +9,12 @@ export const addTodo = todoText => {
 };
 
 // toggles action to Done or Not Done
-export const toggleTodo = () => dispatch =>
-  dispatch({
-    type: "TOGLE_TODO"
-  });
+export const toggleTodo = idTodo => {
+  return {
+    type: "TOGGLE_TODO",
+    id: idTodo
+  };
+};
 
 // changes which actions are shown
 export const setVisibility = () => dispatch =>
